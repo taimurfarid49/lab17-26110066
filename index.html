@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dera Crunch | Crunch Hai Toh Maza Hai</title>
+  <meta name="description" content="Dera Crunch: crispy fried chicken, crunchy burgers and chatpata sides. Crunch Hai Toh Maza Hai! A fictional student project.">
+  <meta name="theme-color" content="#1F1F1F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Icon sprite: every icon uses currentColor, so it only ever shows a brand colour -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-drumstick" viewBox="0 0 64 64"><g transform="rotate(40 32 32)"><ellipse cx="32" cy="22" rx="15" ry="18"/><rect x="28.5" y="36" width="7" height="15" rx="2"/><circle cx="27.5" cy="53" r="5"/><circle cx="36.5" cy="53" r="5"/></g></symbol>
+    <symbol id="i-burger" viewBox="0 0 64 64"><path d="M8 29C8 17 19 9 32 9s24 8 24 20z"/><path d="M6 32h52v4l-5 4-5-4-5 4-5-4-5 4-5-4-5 4-5-4-5 4-5-4H6z"/><rect x="7" y="42" width="50" height="7" rx="3.5"/><path d="M9 51h46v2a6 6 0 0 1-6 6H15a6 6 0 0 1-6-6z"/></symbol>
+    <symbol id="i-fries" viewBox="0 0 64 64"><rect x="17" y="8" width="5" height="26" rx="2" transform="rotate(-10 19 21)"/><rect x="25" y="5" width="5" height="28" rx="2"/><rect x="34" y="6" width="5" height="28" rx="2" transform="rotate(6 36 20)"/><rect x="42" y="10" width="5" height="24" rx="2" transform="rotate(14 44 22)"/><path d="M12 26h40l-5 32H17z"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 64 64"><rect x="36" y="2" width="4" height="18" rx="2" transform="rotate(18 38 11)"/><rect x="14" y="16" width="36" height="7" rx="3.5"/><path d="M17 26h30l-3.5 32h-23z"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 64 64"><circle cx="22" cy="24" r="7"/><circle cx="32" cy="20" r="8"/><circle cx="42" cy="24" r="7"/><path d="M6 30h52c0 14-11 24-26 24S6 44 6 30z"/><rect x="20" y="54" width="24" height="5" rx="2.5"/></symbol>
+    <symbol id="i-strips" viewBox="0 0 64 64"><rect x="8" y="14" width="40" height="11" rx="5.5" transform="rotate(-14 28 19)"/><rect x="12" y="28" width="44" height="11" rx="5.5" transform="rotate(-4 34 33)"/><rect x="10" y="42" width="40" height="11" rx="5.5" transform="rotate(8 30 47)"/></symbol>
+    <symbol id="i-chilli" viewBox="0 0 64 64"><path d="M41 20c5 2 8 7 7 13-2 13-15 23-34 24-4 0-5-4-1-5 13-3 20-12 21-23 1-6 3-9 7-9z"/><path d="M40 21c0-6 3-11 9-13" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 64 64"><path d="M24 22v-5a8 8 0 0 1 16 0v5" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><path d="M12 22h40l-3 34a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 64 64"><path d="M32 56 9 33a13 13 0 0 1 23-17 13 13 0 0 1 23 17z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 64 64"><path d="M33 4c3 12 17 18 17 34a18 18 0 0 1-36 0c0-8 4-13 8-17 0 6 3 10 7 11-3-10 0-20 4-28z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Dera Crunch home">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#i-drumstick"/></svg></span>
+        <span class="brand-text">
+          <span class="brand-name">Dera Crunch</span>
+          <span class="brand-tagline">Crunch Hai Toh Maza Hai</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <nav class="main-nav" id="main-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="index.html#menu">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="cart-toggle" id="cart-toggle" aria-controls="cart-panel" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+          <span class="cart-label">Cart</span>
+          <span class="cart-count" id="cart-count" aria-label="0 items">0</span>
+        </button>
+        <button type="button" class="menu-btn" id="menu-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="menu-btn-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="kicker">
+            <svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>
+            Garma garam, har dum
+          </span>
+          <h1 id="hero-title"><span>Dera</span><span>Crunch</span></h1>
+          <p class="tagline-sticker">Crunch Hai Toh Maza Hai</p>
+          <p class="hero-copy">Crispy fried chicken, loaded burgers and chatpata sides, made for loud crunches and happy family tables. One bite and you'll say it too: <em>Maza aa gaya!</em></p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#menu">
+              <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+              Order the Crunch
+            </a>
+            <a class="btn btn-light" href="#combo">Build Your Combo</a>
+          </div>
+          <ul class="hero-facts">
+            <li><strong>8</strong> crunchy picks</li>
+            <li><strong>3</strong> spice levels</li>
+            <li><strong>100%</strong> maza</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="plate"><svg class="icon"><use href="#i-drumstick"/></svg></div>
+          <span class="sticker sticker-hot">Hot &amp; crispy!</span>
+          <span class="sticker sticker-price"><span>From<strong>Rs. 220</strong></span></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Crunch Hai Toh Maza Hai</span><span>•</span><span>Maza aa gaya!</span><span>•</span><span>Garma garam</span><span>•</span><span>Bas ek aur bite</span><span>•</span>
+        <span>Crunch Hai Toh Maza Hai</span><span>•</span><span>Maza aa gaya!</span><span>•</span><span>Garma garam</span><span>•</span><span>Bas ek aur bite</span><span>•</span>
+      </div>
+    </div>
+
+    <!-- ============ CHEF'S PICK OF THE DAY ============ -->
+    <section class="pick" id="chefs-pick" aria-labelledby="pick-title">
+      <div class="container">
+        <div class="pick-card reveal">
+          <div class="pick-art" id="pick-art" aria-hidden="true"><svg class="icon"><use href="#i-drumstick"/></svg></div>
+          <div class="pick-info">
+            <div class="pick-labels">
+              <span class="pick-badge"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> Chef's Pick</span>
+              <time class="pick-date" id="pick-date"></time>
+            </div>
+            <h2 id="pick-title">Today: <span id="pick-name">Loading…</span></h2>
+            <p class="pick-desc" id="pick-desc"></p>
+          </div>
+          <div class="pick-aside">
+            <span class="pick-price" id="pick-price"></span>
+            <button type="button" class="btn btn-dark" id="pick-add">+ Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The menu</span>
+          <h2 id="menu-title">Pick your crunch</h2>
+          <p>Eight crowd favourites across Chicken, Burgers, and Sides and Drinks. Tap a tab to filter, then add to cart. Simple, na?</p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter menu by category" id="filter-bar">
+          <!-- Filled by script.js -->
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+          <noscript><p>Please turn on JavaScript to see our crunchy menu.</p></noscript>
+        </div>
+        <p class="menu-status visually-hidden" id="menu-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ============ COMBO ============ -->
+    <section class="section combo" id="combo" aria-labelledby="combo-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Build your combo</span>
+          <h2 id="combo-title">Your meal, your rules</h2>
+          <p>Choose a main, a side and a drink, then set the spice level. Halka sa or full tez, hum ready hain!</p>
+        </div>
+
+        <div class="combo-grid reveal">
+          <form id="combo-form" novalidate>
+            <fieldset class="combo-step">
+              <legend><span class="step-num">1</span> Pick your main</legend>
+              <div class="choice-grid" id="combo-main"></div>
+            </fieldset>
+
+            <fieldset class="combo-step">
+              <legend><span class="step-num">2</span> Add a side</legend>
+              <div class="choice-grid" id="combo-side"></div>
+            </fieldset>
+
+            <fieldset class="combo-step">
+              <legend><span class="step-num">3</span> Choose a drink</legend>
+              <div class="choice-grid" id="combo-drink"></div>
+            </fieldset>
+
+            <fieldset class="combo-step">
+              <legend><span class="step-num">4</span> Spice level</legend>
+              <div class="choice-grid spice-grid" id="combo-spice"></div>
+              <div class="spice-meter-card" id="spice-meter-card">
+                <div class="spice-meter-top">
+                  <span class="spice-meter-title">Spice Meter</span>
+                  <span class="spice-level-name" id="spice-level-name">Medium</span>
+                </div>
+                <div class="chilli-row" id="chilli-row" aria-hidden="true">
+                  <svg class="icon"><use href="#i-chilli"/></svg>
+                  <svg class="icon"><use href="#i-chilli"/></svg>
+                  <svg class="icon"><use href="#i-chilli"/></svg>
+                </div>
+                <div class="spice-bar" role="meter" id="spice-bar" aria-label="Spice level" aria-valuemin="1" aria-valuemax="3" aria-valuenow="2" aria-valuetext="Level 2 of 3, Medium">
+                  <div class="spice-bar-fill" id="spice-bar-fill"></div>
+                </div>
+                <p class="spice-comment" id="spice-comment" aria-live="polite"></p>
+              </div>
+            </fieldset>
+          </form>
+
+          <aside class="combo-summary" aria-labelledby="summary-title">
+            <h3 id="summary-title"><svg class="icon" aria-hidden="true"><use href="#i-burger"/></svg> Your combo</h3>
+            <ul class="summary-list">
+              <li><span class="label">Main</span><span class="value" id="sum-main"></span></li>
+              <li><span class="label">Side</span><span class="value" id="sum-side"></span></li>
+              <li><span class="label">Drink</span><span class="value" id="sum-drink"></span></li>
+              <li>
+                <span class="label">Spice</span>
+                <span class="value"><span id="sum-spice"></span>
+                  <span class="spice-meter" id="spice-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                </span>
+              </li>
+            </ul>
+            <div class="summary-total">
+              <span>Combo total</span>
+              <output id="combo-total" for="combo-form" aria-live="polite">Rs. 0</output>
+            </div>
+            <button type="button" class="btn btn-dark btn-block" id="add-combo">
+              <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+              Add combo to cart
+            </button>
+            <p class="summary-note">Mix, match, crunch. <em>Maza aa gaya!</em></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid reveal">
+        <div class="about-text">
+          <div class="section-head">
+            <span class="eyebrow">About us</span>
+            <h2 id="about-title">A little dera with a big crunch</h2>
+          </div>
+          <p>Dera Crunch is our happy hangout for crispy chicken and feel-good food. Think warm welcomes, loud crunches and a table full of family and yaar dost.</p>
+          <p>Every piece is marinated with desi masalay, double-coated for extra crunch and fried till perfectly golden. Simple food, big flavour, zero tension.</p>
+          <a class="btn btn-light" href="about.html">Read our story</a>
+        </div>
+
+        <aside class="love-card" aria-labelledby="love-title">
+          <h3 id="love-title">Why you'll love it</h3>
+          <ul class="love-list">
+            <li>
+              <span class="love-icon" aria-hidden="true"><svg class="icon"><use href="#i-drumstick"/></svg></span>
+              <span><strong>Loud, proper crunch</strong>Double-coated and golden, every single time.</span>
+            </li>
+            <li>
+              <span class="love-icon" aria-hidden="true"><svg class="icon"><use href="#i-chilli"/></svg></span>
+              <span><strong>Your spice, your call</strong>From halka sa to Dera Fire, you choose.</span>
+            </li>
+            <li>
+              <span class="love-icon" aria-hidden="true"><svg class="icon"><use href="#i-heart"/></svg></span>
+              <span><strong>Family-friendly vibes</strong>Kids, nani, doston: sab ke liye kuch na kuch.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid reveal">
+        <div class="contact-info">
+          <div class="section-head">
+            <span class="eyebrow">Contact</span>
+            <h2 id="contact-title">Say salam!</h2>
+          </div>
+          <p>Got a question, a craving or a bit of feedback? Drop us a message and we'll get back to you with full maza.</p>
+          <p>Please write your phone number as <strong>03XX-XXXXXXX</strong>. It needs exactly 11 digits.</p>
+          <p class="contact-note"><strong>Heads up:</strong> Dera Crunch is a fictional student project. There are no real branches, deals or deliveries, but the forms really do check your details!</p>
+        </div>
+
+        <form class="form-card" id="contact-form" novalidate aria-describedby="contact-required-note">
+          <p class="hint form-note" id="contact-required-note">Fields marked * are required.</p>
+          <p class="form-alert" id="contact-form-alert" role="alert"></p>
+          <div class="field">
+            <label for="c-name">Your name <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input class="input" type="text" id="c-name" name="name" autocomplete="name" required aria-describedby="c-name-err">
+            <p class="error" id="c-name-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="c-phone">Phone number <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input class="input" type="tel" id="c-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="03XX-XXXXXXX" required data-phone aria-describedby="c-phone-hint c-phone-err">
+            <p class="hint" id="c-phone-hint">Exactly 11 digits, e.g. 03XX-XXXXXXX</p>
+            <p class="error" id="c-phone-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="c-msg">Message <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <textarea class="input" id="c-msg" name="message" rows="4" required aria-describedby="c-msg-err"></textarea>
+            <p class="error" id="c-msg-err" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn btn-chilli btn-block">Send message</button>
+          <p class="success-box" id="contact-success" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-tagline">Crunch Hai Toh Maza Hai</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="index.html#menu">Menu</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-bottom">Dera Crunch · Fictional student project</p>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <div class="cart-head">
+      <h2 id="cart-title">Your cart <small id="cart-items-label">(0 items)</small></h2>
+      <button type="button" class="icon-btn" id="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-scroll" id="cart-scroll">
+      <div id="cart-view">
+        <ul class="cart-list" id="cart-list"></ul>
+
+        <div class="cart-empty" id="cart-empty" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+          <h3>Arre, cart khali hai!</h3>
+          <p>Your tummy is waiting and this bag is feeling lonely. Add some crunch and let the maza begin!</p>
+          <a class="btn btn-chilli" href="#menu" id="empty-browse">Browse the menu</a>
+        </div>
+
+        <form class="checkout" id="checkout-form" novalidate>
+          <h3>Checkout</h3>
+          <p class="hint form-note">Fields marked * are required.</p>
+          <p class="form-alert" id="checkout-form-alert" role="alert"></p>
+          <div class="field">
+            <label for="o-name">Name <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input class="input" type="text" id="o-name" name="name" autocomplete="name" required aria-describedby="o-name-err">
+            <p class="error" id="o-name-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="o-phone">Phone number <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <input class="input" type="tel" id="o-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="03XX-XXXXXXX" required data-phone aria-describedby="o-phone-hint o-phone-err">
+            <p class="hint" id="o-phone-hint">Exactly 11 digits, e.g. 03XX-XXXXXXX</p>
+            <p class="error" id="o-phone-err" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="o-address">Delivery address <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+            <textarea class="input" id="o-address" name="address" rows="2" autocomplete="street-address" required aria-describedby="o-address-err"></textarea>
+            <p class="error" id="o-address-err" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+
+      <div class="order-done" id="order-done" hidden tabindex="-1">
+        <div class="done-badge" aria-hidden="true"><svg class="icon"><use href="#i-drumstick"/></svg></div>
+        <h3>Maza aa gaya!</h3>
+        <p id="order-thanks"></p>
+        <p class="order-meta" id="order-meta"></p>
+        <div class="tracker" id="tracker">
+          <div class="tracker-head">
+            <span>Live order tracker</span>
+            <span class="tracker-status" id="tracker-status">Order received</span>
+          </div>
+          <div class="tracker-bar" role="progressbar" id="tracker-bar" aria-label="Order progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="tracker-fill" id="tracker-fill"></div>
+          </div>
+          <ol class="tracker-steps" id="tracker-steps">
+            <li><span class="dot">1</span>Order received</li>
+            <li><span class="dot">2</span>Frying</li>
+            <li><span class="dot">3</span>Packed</li>
+            <li><span class="dot">4</span>On the way</li>
+          </ol>
+          <p class="tracker-msg" id="tracker-msg" aria-live="polite"></p>
+        </div>
+        <p>This is a fictional student project, so no real food is on its way. Sorry, yaar!</p>
+        <button type="button" class="btn btn-dark" id="order-again">Back to the menu</button>
+      </div>
+    </div>
+
+    <div class="cart-foot" id="cart-foot">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <output id="cart-total" aria-live="polite">Rs. 0</output>
+      </div>
+      <button type="submit" form="checkout-form" class="btn btn-dark btn-block" id="place-order">Place order</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span id="toast-msg"></span>
+    <button type="button" id="toast-view">View cart</button>
+  </div>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="site.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
