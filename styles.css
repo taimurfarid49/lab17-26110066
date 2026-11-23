@@ -1729,3 +1729,53 @@ textarea.input { min-height: 120px; resize: vertical; }
 
 /* Home hero headline is a longer Roman Urdu line, so it is sized to fit a 360px phone */
 .hero:not(.page-hero) h1 { font-size: clamp(2.5rem, 10vw, 5.8rem); }
+
+/* ---------- Footer: brand, opening hours, fictional note ---------- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 2rem 2.5rem;
+  align-items: start;
+}
+.footer-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--cream);
+}
+.footer-brand .footer-tagline { margin: .2rem 0 1.1rem; }
+.footer-hours h2,
+.footer-fiction h2 {
+  margin-bottom: .8rem;
+  font-size: 1.05rem;
+  color: var(--mustard);
+  letter-spacing: .02em;
+}
+.hours-list { margin: 0; display: grid; gap: .45rem; }
+.hours-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: .45rem;
+  border-bottom: 2px dashed var(--cream);
+}
+.hours-list dt { font-weight: 500; }
+.hours-list dd { margin: 0; font-weight: 600; white-space: nowrap; color: var(--mustard); }
+.hours-note { margin-top: .75rem; font-style: italic; }
+.footer-fiction {
+  padding: 1.1rem 1.2rem;
+  border: 3px solid var(--mustard);
+  border-radius: var(--radius-sm);
+}
+.footer-fiction p { font-size: .92rem; }
+.footer-bottom { font-weight: 600; }
+
+@media (max-width: 960px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-fiction { grid-column: 1 / -1; }
+}
+@media (max-width: 720px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+.footer-brand .footer-tagline { font-size: clamp(1.3rem, 2.2vw, 1.55rem); }
