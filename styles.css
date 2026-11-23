@@ -1726,3 +1726,6 @@ textarea.input { min-height: 120px; resize: vertical; }
 
 /* No grey/blue tap flash on phones: keeps strictly to the four brand colours */
 * { -webkit-tap-highlight-color: transparent; }
+
+/* Home hero headline is a longer Roman Urdu line, so it is sized to fit a 360px phone */
+.hero:not(.page-hero) h1 { font-size: clamp(2.5rem, 10vw, 5.8rem); }
